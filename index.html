@@ -119,7 +119,6 @@ body {
 const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"ensureCrossOriginIsolationHeaders":true,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":50918048,"index.wasm":43699190},"focusCanvas":true,"gdextensionLibs":[],"serviceWorker":"index.service.worker.js"};
 const GODOT_THREADS_ENABLED = false;
 const engine = new Engine(GODOT_CONFIG);
-alert("There is currently a bug that crashes the game when you have escaped. The game still counts the escape, but you need to refresh the page or reopen the site to get it working again. This will be fixed at some point today.\n\nOther than that, the game works normally, so have fun!");
 
 (function () {
 	const statusOverlay = document.getElementById('status');
@@ -205,6 +204,7 @@ alert("There is currently a bug that crashes the game when you have escaped. The
 		}
 	} else {
 		setStatusMode('progress');
+		alert("There is currently a bug that crashes the game when you have escaped. The game still counts the escape, but you will need to refresh the page or reopen the site to get it working again. This will be fixed at some point today.\n\nOther than that, the game works normally, so have fun!");
 		engine.startGame({
 			'onProgress': function (current, total) {
 				if (current > 0 && total > 0) {
